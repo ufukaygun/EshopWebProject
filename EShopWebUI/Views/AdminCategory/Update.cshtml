@@ -1,0 +1,33 @@
+﻿@model EShopWebUI.Models.CategoryModel
+@{
+	ViewData["Title"] = "Update";
+}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<form method="post">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title"></div>
+					</div>
+					<div class="card-body">
+						<input type="hidden" asp-for="Id" id="id" />
+						<div class="form-group">
+							<label for="name">Kategori Adı Giriniz</label>
+							<input type="text" class="form-control" asp-for="Name" id="name">
+						</div>
+						<div class="form-group">
+							<label for="description">Açıklama Giriniz</label>
+							<input type="text" class="form-control" asp-for="Description" id="description">
+						</div>
+					</div>
+					<div class="card-action">
+						<button class="btn btn-primary">Kategoriyi Güncelle</button>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
+</div>

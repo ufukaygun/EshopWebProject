@@ -1,0 +1,77 @@
+﻿@model EShopWebUI.Models.ProductModel
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form method="post" enctype="multipart/form-data">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title"></div>
+                    </div>
+                    <div class="card-body">
+                        <input type="hidden" asp-for="Id" id="id" />
+                        <div class="form-group">
+                            <label for="name">Ürün Adı Giriniz</label>
+                            <input type="text" class="form-control" asp-for="Name" id="name" value="@Model.Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Açıklama Giriniz</label>
+                            <input type="text" class="form-control" asp-for="Description" id="description" value="@Model.Description">
+                        </div>
+
+                         <div class="form-group">
+                            <label for="ImageFile">Resim</label>
+                            <input type="file" class="form-control" asp-for="Image" id="ImageFile" value="@Model.Image">
+                        </div>  
+
+                        <div class="form-group">
+                            <label for="price">Fiyat</label>
+                            <input type="text" class="form-control" asp-for="Price" id="price" value="@Model.Price">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="stok">Stok</label>
+                            <input type="text" class="form-control" asp-for="Stock" id="stok" value="@Model.Stock">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="popular">Popüler</label>
+                            @Html.EditorFor(x => x.Popular)
+                            @* <input value="@Model.Popular" /> *@
+                        </div>
+
+                        <div class="form-group">
+                            <label for="onay">Onay</label>
+                            @Html.EditorFor(x => x.IsApproved)
+                            @* <input value="@Model.IsApproved" /> *@
+                        </div>
+
+                        <div class="form-group">
+                            <label>Kategori</label>
+                            <label asp-for="CategoryId" class="control-label"></label>
+                            <select asp-for="CategoryId" class="form-control" asp-items="@(ViewData["CategoryId"] as IEnumerable<SelectListItem>)">
+                                <option value="">Lütfen Kategori Seçiniz</option>
+                            </select>
+
+                            @* @Html.DropDownListFor(x=> x.CategoryId,(List<SelectListItem>)ViewBag.ktgr,new{@class="form-control"}) *@
+                            
+                        </div>
+
+                    </div>
+                    <div class="card-action">
+                        <button type="submit" class="btn btn-primary">Ürünü Güncelle</button>
+                        <a href="/AdminProduct/Index" class="btn btn-primary">Ürün Listesi</a>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+
