@@ -57,7 +57,7 @@
                                 <option value="">Lütfen Kategori Seçiniz</option>
                             </select> *@
 
-                            @Html.DropDownListFor(model => model.CategoryId, (IEnumerable<SelectListItem>)ViewBag.CategoryId, "Lütfen Kategori Seçiniz", new { @class = "form-control" })
+                            @Html.DropDownListFor(model => model.Category.Name, (IEnumerable<SelectListItem>)ViewBag.CategoryId, "Lütfen Kategori Seçiniz", new { @class = "form-control" })
                             @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
 
                            @* @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.v, new { @class = "form-control" })  *@

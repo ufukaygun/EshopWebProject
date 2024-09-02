@@ -25,7 +25,8 @@
 
                          <div class="form-group">
                             <label for="ImageFile">Resim</label>
-                            <input type="file" class="form-control" asp-for="Image" id="ImageFile" value="@Model.Image">
+                            <input type="file" class="form-control" asp-for="Image" id="ImageFile" >
+                            <img src="~/NiceAdmin/ProductImage/@Model.Image" height="50px" width="50px" />
                         </div>  
 
                         <div class="form-group">

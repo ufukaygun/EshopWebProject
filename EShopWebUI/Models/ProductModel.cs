@@ -15,6 +15,7 @@ namespace EShopWebUI.Models
         public IFormFile ImageFile { get; set; }
         public string Image { get; set; }
 		public int CategoryId { get; set; }
-      
+        public virtual Category Category { get; set; }
+
     }
 }
